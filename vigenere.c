@@ -15,7 +15,11 @@ int getIndexOfChar(char *str, char c) {
 
 /* key and message must be in uppercase before this call */
 char *translate_string(char *key, char *message, char mode) {
+    /* allocate enough memory for the translated string */
     char *translated_str = (char *) malloc(sizeof(char) * strlen(message));
+    if (translated_str == NULL)
+        exit(EXIT_FAILURE);
+
     int num = 0;
     int key_count = 0;
     for (int i = 0; i < strlen(message); i++) {
