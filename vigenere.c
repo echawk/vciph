@@ -15,6 +15,14 @@ int getIndexOfChar(char *str, char c) {
 
 /* key and message must be in uppercase before this call */
 char *translate_string(char *key, char *message, char mode) {
+
+    /* FIXME: there is currently a bug with the overflow implementation.
+       When decrypting with a key that is either too small (A or B), or
+       with a key that causes an overflow (X, Y, or Z), the decryption
+       step doesn't work. I can confirm that the encryption step does work
+       as my previous implemenation yields the same results.
+    */
+
     /* allocate enough memory for the translated string */
     char *translated_str = (char *) malloc(sizeof(char) * strlen(message));
     if (translated_str == NULL)
@@ -40,10 +48,11 @@ char *translate_string(char *key, char *message, char mode) {
             break;
         }
 
-        /* if negative, make it positive */
+        /* if negative, make it positive
         if (num < 0) {
             num = num * -1;
         }
+        */
 
         /* if over 26, wrap back around */
         num %= strlen(ALPHABET);
