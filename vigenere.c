@@ -22,12 +22,23 @@ char *translate_string(char *key, char *message, char mode) {
         /* get the index of the current letter in the message in the alphabet */
         num = getIndexOfChar((char *) ALPHABET, message[i]);
 
+        switch (mode) {
         /* encrypt */
-        if (mode == 'e') {
+        case 'e':
             num += getIndexOfChar((char *)ALPHABET, key[key_count]);
-            /* decrypt */
-        } else if (mode == 'd') {
+            break;
+        /* decrypt */
+        case 'd':
             num -= getIndexOfChar((char *)ALPHABET, key[key_count]);
+            break;
+        default:
+            exit(EXIT_FAILURE);
+            break;
+        }
+
+        /* if negative, make it positive */
+        if (num < 0) {
+            num = num * -1;
         }
 
         /* if over 26, wrap back around */
