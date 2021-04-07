@@ -1,3 +1,4 @@
+# vciph
 ## Origin
 This repo holds a c rewrite of a cipher program that I wrote in high
 school. My original code was not easy to follow or understandable for that
@@ -18,7 +19,7 @@ One limitation of the program in it's current state is that it can only
 encrypt messages that consist of solely capital letters. There is no
 support for lowercase letters or any other character on the keyboard.
 
-# Dependencies
+## Dependencies
 * gnu make
 * c99 compiler
 
