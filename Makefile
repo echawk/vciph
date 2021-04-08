@@ -1,8 +1,9 @@
 .POSIX:
 .PHONY: clean
 CC=gcc
-CFLAGS=-std=c99 -Wall -pedantic
-SRCS=$(wildcard *.c)
+CFLAGS:=$(CFLAGS) -std=c99 -Wall -pedantic
+#SRCS=$(wildcard *.c)
+SRCS=ciph.c reverse_string.c vigenere.c
 OBJS=$(SRCS:.c=.o)
 TARGET=ciph
 

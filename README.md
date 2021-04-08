@@ -20,10 +20,10 @@ encrypt messages that consist of solely capital letters. There is no
 support for lowercase letters or any other character on the keyboard.
 
 ## Dependencies
-* gnu make
+* make
 * c99 compiler
 
-To build, run either `make` or `gmake`
+To build, run `make`
 
 ## Usage: (I don't advise using this)
 
