@@ -7,7 +7,7 @@ SRCS=ciph.c reverse_string.c vigenere.c
 OBJS=$(SRCS:.c=.o)
 TARGET=ciph
 
-all: ciph
+all: $(TARGET)
 
 $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS)
