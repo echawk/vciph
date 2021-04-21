@@ -9,8 +9,15 @@ int getIndexOfChar(char *str, char c) {
     /* 'strchr(str, c)' -- get the mem address of the character
     *  '- str' -- subtract the memory address of the string
     */
-    /* FIXME: make the function return null if the character is not in the string */
-    return (int) (strchr(str, c) - str); /* here is our index */
+    /* This is the current fix that I have come up with,
+       * if the character is not in the list (strchr returns
+       * NULL), the the index that is returned is a -1. I think
+       * this is a fair compromise, so that we don't fail here.
+    */
+    char *search_char = strchr(str, c);
+    if (search_char == NULL)
+        return -1;
+    return (int) (search_char - str); /* here is our index */
 }
 
 /* key and message must be in uppercase before this call */
