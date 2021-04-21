@@ -19,6 +19,10 @@ One limitation of the program in it's current state is that it can only
 encrypt messages that consist of solely capital letters. There is no
 support for lowercase letters or any other character on the keyboard.
 
+## todo
+- update the command line parsing to handle spaces
+- support reading in a message from standard in
+
 ## Dependencies
 * make
 * c99 compiler
