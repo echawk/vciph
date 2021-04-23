@@ -37,7 +37,8 @@ char *translate_string(char *key, char *message, char mode) {
 
     int num = 0;
     int key_count = 0;
-    for (int i = 0; i < strlen(message); i++) {
+    int i;
+    for (i = 0; i < strlen(message); i++) {
         /* get the index of the current letter in the message in the alphabet */
         num = getIndexOfChar((char *) ALPHABET, message[i]);
         if (getIndexOfChar < 0)
@@ -77,7 +78,7 @@ char *translate_string(char *key, char *message, char mode) {
     return translated_str;
 }
 
-//printf("%d + %d\n", num , getIndexOfChar((char *)ALPHABET, key[key_count]));
-//printf("%d - %d\n", num , getIndexOfChar((char *)ALPHABET, key[key_count]));
-//printf("translated_str[%d] = %c -- message[%d] = %c\n", i, ALPHABET[num], i, message[i]);
-//printf("key_count is strlen\n");
+/*printf("%d + %d\n", num , getIndexOfChar((char *)ALPHABET, key[key_count])); */
+/*printf("%d - %d\n", num , getIndexOfChar((char *)ALPHABET, key[key_count])); */
+/*printf("translated_str[%d] = %c -- message[%d] = %c\n", i, ALPHABET[num], i, message[i]); */
+/*printf("key_count is strlen\n"); */

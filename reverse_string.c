@@ -19,7 +19,8 @@ char *reverse_string(char *str) {
     if (tstr == NULL)
         exit(EXIT_FAILURE);
     /* save the reversed version of str in tstr */
-    for (int i = 0; i < len; i++) {
+    int i;
+    for (i = 0; i < len; i++) {
         tstr[i] = (str)[len - 1 - i];
         /* printf("tstr[%d] = %c -- str[%d] = %c\n", i, tstr[i], i, (str)[i]); */
     }
