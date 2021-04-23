@@ -44,8 +44,8 @@ If you want to decrypt a message that uses a specific key, run:
 Optionally, you can include the `-oOUTFILE` to save the result into a file
 because by default, it is printed to stdout.
 
-**NOTE:** Right now decryption is in a half working state. Some keys it will work
-while others don't. This is an issue I am working to solve.
+~~**NOTE:** Right now decryption is in a half working state. Some keys it will work while others don't. This is an issue I am working to solve.~~
+Decryption is now working.
 
 If you want to reverse the message as well, you can add the `-r` flag, and it will
 reverse the input string.
