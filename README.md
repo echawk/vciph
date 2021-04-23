@@ -25,7 +25,7 @@ support for lowercase letters or any other character on the keyboard.
 
 ## Dependencies
 * make
-* c99 compiler
+* c89 compiler
 
 To build, run `make`
 
