@@ -58,14 +58,10 @@ char *translate_string(char *key, char *message, char mode) {
             break;
         }
 
-        /* if negative, make it positive
+        /* if negative, wrap around*/
         if (num < 0) {
-            num = num * -1;
+            num = strlen(ALPHABET) + num;
         }
-        */
-
-        /* if over 26, wrap back around */
-        num %= strlen(ALPHABET);
 
         translated_str[i] = ALPHABET[num];
 
