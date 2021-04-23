@@ -35,13 +35,14 @@ char *translate_string(char *key, char *message, char mode) {
     if (translated_str == NULL)
         exit(EXIT_FAILURE);
 
+    int i;
     int num = 0;
     int key_count = 0;
-    int i;
+
     for (i = 0; i < strlen(message); i++) {
         /* get the index of the current letter in the message in the alphabet */
         num = getIndexOfChar((char *) ALPHABET, message[i]);
-        if (getIndexOfChar < 0)
+        if (num < 0)
             exit(EXIT_FAILURE);
         switch (mode) {
         /* encrypt */
