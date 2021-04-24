@@ -66,9 +66,15 @@ char *translate_string(char *key, char *message, char mode) {
             break;
         }
 
+#ifdef DEBUG
+        printf("num = %d, ", num);
+#endif
+
         /* if negative, wrap around*/
         if (num < 0) {
             num = strlen(ALPHABET) + num;
+        } else if (num > strlen(ALPHABET)) {
+            num = num % strlen(ALPHABET);
         }
 
         translated_str[i] = ALPHABET[num];
