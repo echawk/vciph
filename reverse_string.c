@@ -16,10 +16,10 @@ char *reverse_string(char *str) {
     */
     int len = strlen(str);
     char *tstr = (char *) malloc(sizeof(char) * strlen(str));
+    int i; /* Loop iterator */
     if (tstr == NULL)
         exit(EXIT_FAILURE);
     /* save the reversed version of str in tstr */
-    int i;
     for (i = 0; i < len; i++) {
         tstr[i] = (str)[len - 1 - i];
         /* printf("tstr[%d] = %c -- str[%d] = %c\n", i, tstr[i], i, (str)[i]); */

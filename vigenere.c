@@ -36,13 +36,13 @@ char *translate_string(char *key, char *message, char mode) {
 
     /* allocate enough memory for the translated string */
     char *translated_str = (char *) malloc(sizeof(char) * strlen(message));
+
+    int i; /* Loop iterator */
+    int num = 0; /* our encrypted number */
+    int key_count = 0; /* our current position in the key */
+
     if (translated_str == NULL)
         exit(EXIT_FAILURE);
-
-    int i;
-    int num = 0;
-    int key_count = 0;
-
     for (i = 0; i < strlen(message); i++) {
         /* get the index of the current letter in the message in the alphabet */
         num = getIndexOfChar((char *) ALPHABET, message[i]);

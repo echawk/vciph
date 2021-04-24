@@ -19,6 +19,8 @@ int main(int argc, char *argv[]) {
     int enc = false;
     int rev = false;
 
+    FILE *ofp = NULL;
+
     /* if we have options to parse and the first character
         is a '-', switch on the second character of the
         argument. argv[1][2] is the rest of the argument.
@@ -70,7 +72,6 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
 
 
-    FILE *ofp = NULL;
     if (outFilename == NULL) {
         ofp = stdout;
     } else {
