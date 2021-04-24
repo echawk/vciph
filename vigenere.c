@@ -3,6 +3,10 @@
 
 #include "vigenere.h"
 
+#ifdef DEBUG
+#include <stdio.h>
+#endif
+
 char *ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 int getIndexOfChar(char *str, char c) {
@@ -42,6 +46,10 @@ char *translate_string(char *key, char *message, char mode) {
     for (i = 0; i < strlen(message); i++) {
         /* get the index of the current letter in the message in the alphabet */
         num = getIndexOfChar((char *) ALPHABET, message[i]);
+#ifdef DEBUG
+        printf("num = %d, ", num);
+        printf("key[%d] = %d", key_count, key[key_count]);
+#endif
         if (num < 0)
             exit(EXIT_FAILURE);
         switch (mode) {
