@@ -50,6 +50,7 @@ char *translate_string(char *key, char *message, char mode) {
         printf("orig_char = %c, ", ALPHABET[num]);
         printf("num = %d, ", num);
         printf("key[%d] = %c, ", key_count, key[key_count]);
+        printf("index(key[%d]) = %d, ", key_count, getIndexOfChar((char *)ALPHABET, key[key_count]));
 #endif
         if (num < 0)
             exit(EXIT_FAILURE);
