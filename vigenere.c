@@ -75,7 +75,7 @@ char *translate_string(char *key, char *message, char mode) {
         /* if negative, wrap around*/
         if (num < 0) {
             num = strlen(ALPHABET) + num;
-        } else if (num > strlen(ALPHABET)) {
+        } else if (num > (strlen(ALPHABET) - 1)) {
             num = num % strlen(ALPHABET);
         }
 
