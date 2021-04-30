@@ -24,7 +24,7 @@ $(TEST_RUNNER): $(TESTOBJS)
 	$(CC) $(CFLAGS) -o $@ $(TESTOBJS)
 
 clean:
-	rm $(TARGET) $(OBJS) $(TESTOBJS) $(TEST_RUNNER)
+	rm -vf $(TARGET) $(OBJS) $(TESTOBJS) $(TEST_RUNNER)
 
 test: $(TEST_RUNNER)
 	./$(TEST_RUNNER)
