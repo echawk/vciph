@@ -4,24 +4,27 @@
 
 
 static MunitResult
-test_compare(const MunitParameter params[], void* data) {
+test_reverse_string(const MunitParameter params[], void* data) {
+    char *string_1 = "revengemybabymegnever";
     (void) params;
     (void) data;
-    char *string_1 = "revengemybabymegnever";
     munit_assert_string_equal(reverse_string(string_1), string_1);
-
 
     return MUNIT_OK;
 }
 
+static MunitResult
+test_vigenere(const MunitParameter params[], void* data) {
+    char *string_1 = "abcdefghijklmnopqrstuvwxyz";
+    munit_assert_int(0, ==, getIndexOfChar(string_1, 'a'));
 
-
-
-
+    return MUNIT_OK;
+}
 
 static MunitTest
 test_suite_tests[] = {
-    { (char*) "Reverse String", test_compare, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL}
+    { (char*) "Reverse String Header", test_reverse_string, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL},
+    { (char*) "Vigenere Header", test_vigenere, NULL, NULL, MUNIT_TEST_OPTION_NONE, NULL}
 };
 
 
