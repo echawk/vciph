@@ -16,16 +16,28 @@ test_reverse_string(const MunitParameter params[], void* data) {
 static MunitResult
 test_vigenere(const MunitParameter params[], void* data) {
     char *key_1 = "KEY";
-    char *key_2 = "LONGERKEY";
+    char *key_2 = "SUPERSUPERLONGKEYLONGERTHANMESSAGE";
+
     char *plain_message_1 = "SHORTMESSAGE";
     char *crypt_key_1_message_1 = "CLMBXKOWQKKC";
+    char *crypt_key_2_message_1 = "KBDVKEYHWRRS";
+
     char *plain_message_2 = "MUCHMUCHLONGERMESSAGE";
+    char *crypt_key_1_message_2 = "CLMBXKOWQKKC";
+    char *crypt_key_2_message_2 = "KBDVKEYHWRRS";
 
     char *string_1 = "abcdefghijklmnopqrstuvwxyz";
+
     munit_assert_int(0, ==, getIndexOfChar(string_1, 'a'));
     munit_assert_int(25, ==, getIndexOfChar(string_1, 'z'));
+    munit_assert_int(-1, ==, getIndexOfChar(string_1, 'A'));
+
 
     munit_assert_string_equal(translate_string(key_1, plain_message_1, 'e'), crypt_key_1_message_1);
+    munit_assert_string_equal(translate_string(key_2, plain_message_1, 'e'), crypt_key_2_message_1);
+
+    munit_assert_string_equal(translate_string(key_1, plain_message_2, 'e'), crypt_key_1_message_2);
+    munit_assert_string_equal(translate_string(key_2, plain_message_2, 'e'), crypt_key_2_message_2);
 
     return MUNIT_OK;
 }
