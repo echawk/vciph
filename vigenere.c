@@ -35,7 +35,7 @@ char *translate_string(char *key, char *message, char mode) {
     */
 
     /* allocate enough memory for the translated string */
-    char *translated_str = (char *) malloc(sizeof(char) * strlen(message));
+    char *translated_str = (char *) malloc(sizeof(char) * (int) strlen(message));
 
     int i; /* Loop iterator */
     int num = 0; /* our encrypted number */
@@ -43,7 +43,7 @@ char *translate_string(char *key, char *message, char mode) {
 
     if (translated_str == NULL)
         exit(EXIT_FAILURE);
-    for (i = 0; i < strlen(message); i++) {
+    for (i = 0; i < (int) strlen(message); i++) {
         /* get the index of the current letter in the message in the alphabet */
         num = getIndexOfChar((char *) ALPHABET, message[i]);
 #ifdef DEBUG
@@ -74,9 +74,9 @@ char *translate_string(char *key, char *message, char mode) {
 
         /* if negative, wrap around*/
         if (num < 0) {
-            num = strlen(ALPHABET) + num;
-        } else if (num > (strlen(ALPHABET) - 1)) {
-            num = num % strlen(ALPHABET);
+            num = (int) strlen(ALPHABET) + num;
+        } else if (num > ((int) strlen(ALPHABET) - 1)) {
+            num = num % (int) strlen(ALPHABET);
         }
 
         translated_str[i] = ALPHABET[num];
@@ -87,7 +87,7 @@ char *translate_string(char *key, char *message, char mode) {
 
 
         key_count++;
-        if (key_count == strlen(key)) {
+        if (key_count == (int) strlen(key)) {
             key_count = 0;
         }
         /*FIXME: if the character is not in the string, don't change it */

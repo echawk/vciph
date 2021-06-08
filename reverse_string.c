@@ -14,8 +14,8 @@ char *reverse_string(char *str) {
         *str[len - i] = tchar;
     }
     */
-    int len = strlen(str);
-    char *tstr = (char *) malloc(sizeof(char) * strlen(str));
+    int len = (int) strlen(str);
+    char *tstr = (char *) malloc(sizeof(char) * (int) strlen(str));
     int i; /* Loop iterator */
     if (tstr == NULL)
         exit(EXIT_FAILURE);
