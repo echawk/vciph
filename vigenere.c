@@ -7,7 +7,7 @@
 #include <stdio.h>
 #endif
 
-char *ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+static char *ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 int getIndexOfChar(char *str, char c) {
     /* 'strchr(str, c)' -- get the mem address of the character
@@ -35,7 +35,7 @@ char *translate_string(char *key, char *message, char mode) {
     */
 
     /* allocate enough memory for the translated string */
-    char *translated_str = (char *) malloc(sizeof(char) * (int) strlen(message));
+    char *translated_str = (char *) malloc(sizeof(char) * strlen(message));
 
     int i; /* Loop iterator */
     int num = 0; /* our encrypted number */
@@ -65,7 +65,6 @@ char *translate_string(char *key, char *message, char mode) {
             break;
         default:
             exit(EXIT_FAILURE);
-            break;
         }
 
 #ifdef DEBUG
